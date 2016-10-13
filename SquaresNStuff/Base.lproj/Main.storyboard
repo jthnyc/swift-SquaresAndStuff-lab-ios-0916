@@ -3,6 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,12 +20,46 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpaceShip" translatesAutoresizingMaskIntoConstraints="NO" id="OWw-qQ-KP8"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlbertEinstein" translatesAutoresizingMaskIntoConstraints="NO" id="oOu-2n-wd3">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oOu-2n-wd3" secondAttribute="height" multiplier="1:1" id="6ax-WQ-wj9"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Albert Einstein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyw-Rk-0PW">
+                                <frame key="frameInset" minX="92" minY="264" width="190" height="40"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="2" height="1"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OWw-qQ-KP8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="0sC-kp-AIB"/>
+                            <constraint firstAttribute="topMargin" secondItem="OWw-qQ-KP8" secondAttribute="top" id="79A-Jo-PBI"/>
+                            <constraint firstItem="oOu-2n-wd3" firstAttribute="top" secondItem="OWw-qQ-KP8" secondAttribute="bottom" multiplier="0.75" id="EN4-O0-xtc"/>
+                            <constraint firstItem="oOu-2n-wd3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wm2-rq-46n"/>
+                            <constraint firstAttribute="trailing" secondItem="OWw-qQ-KP8" secondAttribute="trailing" id="acF-Hh-bEU"/>
+                            <constraint firstItem="OWw-qQ-KP8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dSZ-2j-aAG"/>
+                            <constraint firstItem="Lyw-Rk-0PW" firstAttribute="centerX" secondItem="oOu-2n-wd3" secondAttribute="centerX" id="gUr-9H-a8r"/>
+                            <constraint firstItem="oOu-2n-wd3" firstAttribute="height" secondItem="OWw-qQ-KP8" secondAttribute="height" multiplier="0.7" id="lVa-5P-Kbm"/>
+                            <constraint firstItem="Lyw-Rk-0PW" firstAttribute="top" secondItem="oOu-2n-wd3" secondAttribute="bottom" constant="8" id="s5Q-kB-Wgf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="oOu-2n-wd3" id="mxu-yy-Jhj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="399.19999999999999" y="388.15592203898052"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AlbertEinstein" width="300" height="320"/>
+        <image name="SpaceShip" width="900" height="563"/>
+    </resources>
 </document>
